@@ -5,11 +5,11 @@ from PIL import Image, ImageDraw
 # and drawing a box around each person that was identified.
 
 # Load a sample picture and learn how to recognize it.
-ronaldo_image = face_recognition.load_image_file("ronaldo.jpg")
+ronaldo_image = face_recognition.load_image_file("image/lhg2.jpg")
 ronaldo_face_encoding = face_recognition.face_encodings(ronaldo_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-kaka_image = face_recognition.load_image_file("kaka.jpg")
+kaka_image = face_recognition.load_image_file("image/kaka.jpg")
 kaka_face_encoding = face_recognition.face_encodings(kaka_image)[0]
 
 # Create arrays of known face encodings and their names
@@ -18,12 +18,12 @@ known_face_encodings = [
     kaka_face_encoding
 ]
 known_face_names = [
-    "Ronaldo",
+    "lhg",
     "KaKa"
 ]
 
 # Load an image with an unknown face
-unknown_image = face_recognition.load_image_file("ronaldo_kaka_cap.jpg")
+unknown_image = face_recognition.load_image_file("image/ronaldo_kaka_cap.jpg")
 
 # Find all the faces and face encodings in the unknown image
 face_locations = face_recognition.face_locations(unknown_image)

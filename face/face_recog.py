@@ -3,8 +3,9 @@
 import face_recognition
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
-known_image_kaka = face_recognition.load_image_file('kaka.jpg')
-known_image_ronaldo = face_recognition.load_image_file('ronaldo.jpg')
+
+known_image_kaka = face_recognition.load_image_file('image/kaka.png')
+known_image_ronaldo = face_recognition.load_image_file('image/ronaldo.jpg')
 
 kaka_face_encoding = face_recognition.face_encodings(known_image_kaka)[0]
 ronaldo_face_encoding = face_recognition.face_encodings(known_image_ronaldo)[0]
@@ -14,7 +15,7 @@ know_encodings = [
     ronaldo_face_encoding
 ]
 
-image_to_test = face_recognition.load_image_file('kaka2.jpg')
+image_to_test = face_recognition.load_image_file('image/kaka2.jpg')
 image_to_test_encoding = face_recognition.face_encodings(image_to_test)[0]
 
 face_distances = face_recognition.face_distance(know_encodings,image_to_test_encoding)
